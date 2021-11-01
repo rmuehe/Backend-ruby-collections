@@ -27,10 +27,10 @@ end
 # prints out the math
 def random_sum(num = 10)
   random = rand(num) + 1
-  # TODO: clean up this string
-  puts "The sum of all positive integers inclusive to #{random}: \n#{add_up_str(random)}\n= #{add_up(random)}\n "
-  
-  add_up(random)
+  sum = add_up(random)
+  puts "The sum of all positive integers inclusive to #{random}:\n"
+  puts "#{add_up_str(random)}\n= #{sum}\n "
+  sum
 end
 
 puts
@@ -53,3 +53,4 @@ def add_up_test(num = 10)
 end 
 
 # add_up_test 5
+
