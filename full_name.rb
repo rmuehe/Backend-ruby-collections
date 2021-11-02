@@ -1,5 +1,6 @@
 # Write a program which asks for a person's first name, then middle, then last.  It should store each of these parts in an array. Finally, it should greet the person using their full name.
 
+# the created object stores three initialized names 
 class Name
   attr_accessor :first, :middle, :last 
   def initialize(first, middle, last)
@@ -8,6 +9,7 @@ class Name
     @last = last.strip
   end
 
+  # returns a string of all non-empty names
   def to_s
     name_str = ""
     [@first, @middle, @last].each do |name|
@@ -17,6 +19,7 @@ class Name
   end
 end
 
+# prompts the user for names and returns an array of the inputs
 def prompt_names(name_array)
   names = []
   name_array.each do |name| 

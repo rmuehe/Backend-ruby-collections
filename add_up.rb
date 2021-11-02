@@ -1,5 +1,7 @@
 # Write a program with a function add_up(i) .  It is to be passed a positive integer, and it will add all the numbers from 1 to that integer and return the sum.  Call the function three times within the program, and each time print out the return value.
 
+# TODO: object orientation 
+
 # returns the sum of integers from 1 to i given a positive int
 def add_up(i)
   sum = 0
@@ -10,17 +12,18 @@ def add_up(i)
   sum  
 end
 
-# returns a '+' separated integer range string 
+# returns a '+' separated integer range string
 def add_up_str(i)
-  int_arr = []
+  add_str = ""
   integer = 0
-  until i < 1
+  until i < 2
     integer += 1
-    int_arr << integer
+    add_str += "#{integer} + "
     i -= 1
-  end 
-  add_str = int_arr.join(" + ")  
-end  
+  end
+  add_str += "#{integer + 1}" if i == 1
+  add_str   
+end 
 
 # returns the sum of integers from 1 to num, 
 # where num is a random integer from 1-10 by default.
@@ -28,8 +31,10 @@ end
 def random_sum(num = 10)
   random = rand(num) + 1
   sum = add_up(random)
-  puts "The sum of all positive integers inclusive to #{random}:\n"
-  puts "#{add_up_str(random)}\n= #{sum}\n "
+  # TODO: formatting
+  puts "The sum of positive integers up to #{random}:"
+  puts "#{add_up_str(random)}"
+  puts "= #{sum}\n "
   sum
 end
 
